@@ -13,17 +13,21 @@ import { useEffect, useState } from "react";
 
 function App() {
 const [catFact, setCatFact] = useState("");
-
-useEffect(()=>{
+const fetchCatFact = () => {
   Axios.get("https://catfact.ninja/fact").then((res) => {
-    setCatFact(res.data.fact);
-  });
+    setCatFact(res.data.fact); });
+}
+useEffect(()=>{
+  // Axios.get("https://catfact.ninja/fact").then((res) => {
+  //   setCatFact(res.data.fact);
+  fetchCatFact();
+  //});
 }, []);
 
 
   return(
     <div className="App">
-      <button>Generate Cat facts</button>
+      <button onClick ={fetchCatFact}>Generate Cat facts</button>
       <p> {catFact} </p>
       </div>
   );
