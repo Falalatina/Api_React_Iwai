@@ -2,6 +2,8 @@
 import './App.css';
 import Axios from "axios";
 import { useEffect, useState } from "react";
+import './bootstrap.css';
+
 
 // fetch("https://catfact.ninja/fact")
 // .then((res)=> res.json())
@@ -27,9 +29,18 @@ useEffect(()=>{
 
   return(
     <div className="App">
-      <button onClick ={fetchCatFact}>Generate Cat facts</button>
-      <p> {catFact} </p>
-      </div>
+      
+      <h1>Generator ciekawostek o kotkach</h1>
+     
+      <button class="btn btn-lg btn-secondary " type="button" onClick ={fetchCatFact}>Generate Cat facts</button>
+
+      <div class="card text-white bg-info mb-3 20rem " >
+      <div class="card-body" >  <p> {catFact} </p>   </div>
+      
+      </div> 
+    </div>
+    
+      
   );
 
 }
